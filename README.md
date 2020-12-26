@@ -1,5 +1,13 @@
 # KMDessential
 
+# VERSION
+현재 버전은 v0.1.0 입니다.
+버전별로 사용기한이 있으며 심각한 문제가 발생할 경우에는 일괄적으로 사용종료될 수 있습니다.
+
+버전별 사용가능 기간은 다음과 같습니다.
+v 0.1.0 : 2021년 6월 30일
+
+
 # Contact us
 kmdessential@gmail.com
 
