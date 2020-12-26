@@ -21,7 +21,8 @@ import worker
 import manageserial
 import getserver
 import UI_main
-import os
+
+
 
 VERSION = "0.1.0"
 # form_class = uic.loadUiType("UI_main.ui")[0]
@@ -30,11 +31,13 @@ VERSION = "0.1.0"
 # IS_TEST = 1 # 테스트
 # IS_TEST = 2 # 테스트크롤링
 IS_TEST = 0
-UNREGISTERD_BLOG_COUNT = 1
-UNREGISTERD_KEYWORD_COUNT = 2
+UNREGISTERD_BLOG_COUNT = 2
+UNREGISTERD_KEYWORD_COUNT = 10
 DELAY_TIME = 5
 
 DUEDATE = 20210632
+
+
 
 class WindowClass(QMainWindow, UI_main.Ui_mainWindow):
     def __init__(self):

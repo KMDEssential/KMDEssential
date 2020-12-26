@@ -24,45 +24,51 @@ class Worker(QThread):
         if self.is_test == 1:
             rand_k = random.randrange(1,9)
             temp_blog_soonwi = [rand_k for i in range(len(blog_url_list))]
-            print(keyword + " : " + str(temp_blog_soonwi))
         else :
             if self.is_PC:
-                url = "https://search.naver.com/search.naver?sm=mtp_hty.top&where=m&query="+keyword.replace(" ","+")
-                source = requests.get(url).text
-                soup = BeautifulSoup(source, "html.parser")
-                source1 = soup.select("section.sp_nreview")
+                try:
+                    url = "https://search.naver.com/search.naver?sm=mtp_hty.top&where=m&query="+keyword.replace(" ","+")
+                    source = requests.get(url).text
+                    soup = BeautifulSoup(source, "html.parser")
+                    source1 = soup.select("section.sp_nreview")
+                    if len(source1)>0:
+                        source2 = source1[0].ul.find_all('li')
+                        index_view_blog = 0
+                        for key in source2:
+                            blog_url = key.select("a.sub_thumb")[0]['href']
+                            # blog_url = key.select("div.total_sub")[0].a['href']
+                            index_blog_url = 0
+                            for key in blog_url_list:
+                                if key in blog_url:
+                                    temp_blog_soonwi[index_blog_url] = index_view_blog+1
+                                index_blog_url += 1
+                            if index_view_blog >= 6:
+                                break
+                            index_view_blog += 1
+                except:
+                    pass
 
-                if len(source1)>0:
-                    source2 = source1[0].ul.find_all('li')
-                    index_view_blog = 0
-                    for key in source2:
-                        blog_url = key.select("div.total_sub")[0].a['href']
-                        index_blog_url = 0
-                        for key in blog_url_list:
-                            if key in blog_url:
-                                temp_blog_soonwi[index_blog_url] = index_view_blog+1
-                            index_blog_url += 1
-                        if index_view_blog >= 6:
-                            break
-                        index_view_blog += 1
             else:
-                url = "https://m.search.naver.com/search.naver?sm=mtp_hty.top&where=m&query="+keyword.replace(" ","+")
-                source = requests.get(url).text
-                soup = BeautifulSoup(source, "html.parser")
-                source1 = soup.select("section.sp_nreview")
+                try:          
+                    url = "https://m.search.naver.com/search.naver?sm=mtp_hty.top&where=m&query="+keyword.replace(" ","+")
+                    source = requests.get(url).text
+                    soup = BeautifulSoup(source, "html.parser")
+                    source1 = soup.select("section.sp_nreview")
 
-                if len(source1)>0:
-                    source2 = source1[0].ul.find_all('li')
-                    index_view_blog = 0
-                    for key in source2:
-                        blog_url = key.select("div.total_sub")[0].a['href']
-                        index_blog_url = 0
-                        for key in blog_url_list:
-                            if key in blog_url:
-                                temp_blog_soonwi[index_blog_url] = index_view_blog+1
-                            index_blog_url += 1
-                        if index_view_blog >= 6:
-                            break
-                        index_view_blog += 1
-            print(keyword + " : " + str(temp_blog_soonwi))
+                    if len(source1)>0:
+                        source2 = source1[0].ul.find_all('li')
+                        index_view_blog = 0
+                        for key in source2:
+                            blog_url = key.select("a.sub_thumb")[0]['href']
+                            # blog_url = key.select("div.total_sub")[0].a['href']
+                            index_blog_url = 0
+                            for key in blog_url_list:
+                                if key in blog_url:
+                                    temp_blog_soonwi[index_blog_url] = index_view_blog+1
+                                index_blog_url += 1
+                            if index_view_blog >= 6:
+                                break
+                            index_view_blog += 1
+                except:
+                    pass
         return temp_blog_soonwi
