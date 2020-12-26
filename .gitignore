@@ -1,6 +1,7 @@
 .vscode/
 *.db
 *.cfg
+binaries/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

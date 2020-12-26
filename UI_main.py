@@ -5,7 +5,7 @@
 # Created by: PyQt5 UI code generator 5.9.2
 #
 # WARNING! All changes made in this file will be lost!
-
+import os
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_mainWindow(object):
@@ -18,7 +18,7 @@ class Ui_mainWindow(object):
         font.setPointSize(10)
         mainWindow.setFont(font)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("KMDmain.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         mainWindow.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(mainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -234,6 +234,7 @@ class Ui_mainWindow(object):
         self.action_config.setShortcut(_translate("mainWindow", "Ctrl+F"))
         self.action_exit.setText(_translate("mainWindow", "종료"))
         self.action_exit.setShortcut(_translate("mainWindow", "Ctrl+Q"))
+
 
 
 if __name__ == "__main__":
