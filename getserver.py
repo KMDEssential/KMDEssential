@@ -4,7 +4,7 @@ class getServer():
 
     def __init__(self):
         self.urlmain = "https://raw.githubusercontent.com/KMDEssential/KMDEssential/main"
-        self.version_usage = dict()
+        self.version_distributed = dict()
         self.msg = ""
         self.version_latest =""
         self.version =""
@@ -26,7 +26,7 @@ class getServer():
                 for key2 in str1:
                     str2 = key2.split(" ")
                     if len(str2) ==2:
-                        self.version_usage[str2[0]]=str2[1]
+                        self.version_distributed[str2[0]]=str2[1]
                         if str2[1]=='latest':
                             self.version_latest = str2[0]
         for key in str:
@@ -36,3 +36,26 @@ class getServer():
                 str2 = str1.replace("$VERSION",self.version).replace("$LATEST", self.version_latest).replace("msg\n","")
                 result = str2
         return result
+
+    def getValidate(self, version):
+        result =True
+        url = self.urlmain + "/VERSION/msg"
+        source = requests.get(url).text
+        str = source.split('#')
+        for key in str:
+            if "version" in key : 
+                str1 = key.split('\n')
+                for key2 in str1:
+                    str2 = key2.split(" ")
+                    if len(str2) ==2:
+                        self.version_distributed[str2[0]]=str2[1]
+                        if str2[1]=='latest':
+                            self.version_latest = str2[0]
+        if self.version_distributed.get(version):
+            if self.version_distributed[version] == 'terminated':
+                result = False
+        return result
+
+# server = getServer()
+# validate = server.getValidate("0.1.0")
+# print(validate)
