@@ -34,7 +34,8 @@ IS_TEST = 0
 UNREGISTERD_BLOG_COUNT = 2
 UNREGISTERD_KEYWORD_COUNT = 10
 DELAY_TIME = 10
-
+DELAY_TIME_REGIST = 5
+DELAY_TIME_TEST = 1
 DUEDATE = 20210632
 
 
@@ -54,16 +55,21 @@ class WindowClass(QMainWindow, UI_main.Ui_mainWindow):
         self.checkpath = False
         self.regist = False
         self.delaytime_min = DELAY_TIME
-        self.delaytime_max = DELAY_TIME*2
-        if IS_TEST == 1 : 
-            self.delaytime_min = 1
-            self.delaytime_max = 2
+        self.delaytime_max = DELAY_TIME+5
         self.duedate = (int(datetime.today().strftime("%Y%m%d"))<DUEDATE)
         self.validate = self.checkValidate()
 
         self.setupUi(self)
         self.dbCreate()
         self.refresh_init()
+
+        if IS_TEST == 1 : 
+            self.delaytime_min = DELAY_TIME_TEST
+            self.delaytime_max = DELAY_TIME_TEST
+        if self.regist :
+            self.delaytime_min = DELAY_TIME_REGIST
+            self.delaytime_max = DELAY_TIME_REGIST+5
+
 
         if self.duedate and self.validate:
             self.Button_start.clicked.connect(self.crawling_start)
