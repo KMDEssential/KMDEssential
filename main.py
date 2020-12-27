@@ -33,8 +33,9 @@ VERSION = "0.1.0"
 IS_TEST = 0
 UNREGISTERD_BLOG_COUNT = 2
 UNREGISTERD_KEYWORD_COUNT = 10
-DELAY_TIME = 5
-
+DELAY_TIME = 10
+DELAY_TIME_REGIST = 5
+DELAY_TIME_TEST = 1
 DUEDATE = 20210632
 
 
@@ -54,17 +55,23 @@ class WindowClass(QMainWindow, UI_main.Ui_mainWindow):
         self.checkpath = False
         self.regist = False
         self.delaytime_min = DELAY_TIME
-        self.delaytime_max = DELAY_TIME*2
-        if IS_TEST == 1 : 
-            self.delaytime_min = 1
-            self.delaytime_max = 2
-        self.validate = (int(datetime.today().strftime("%Y%m%d"))<DUEDATE)
+        self.delaytime_max = DELAY_TIME+5
+        self.duedate = (int(datetime.today().strftime("%Y%m%d"))<DUEDATE)
+        self.validate = self.checkValidate()
 
         self.setupUi(self)
         self.dbCreate()
         self.refresh_init()
 
-        if self.validate:
+        if IS_TEST == 1 : 
+            self.delaytime_min = DELAY_TIME_TEST
+            self.delaytime_max = DELAY_TIME_TEST
+        if self.regist :
+            self.delaytime_min = DELAY_TIME_REGIST
+            self.delaytime_max = DELAY_TIME_REGIST+5
+
+
+        if self.duedate and self.validate:
             self.Button_start.clicked.connect(self.crawling_start)
             self.Button_stop.clicked.connect(self.crawling_stop)
             self.pushButton_addurl.clicked.connect(self.addUrl)
@@ -180,6 +187,12 @@ class WindowClass(QMainWindow, UI_main.Ui_mainWindow):
             with conn:  
                 c.execute("INSERT OR REPLACE INTO config(name,content) VALUES(?,?)", ('pathserial',self.config['pathserial']))
                 conn.commit()   
+        if 'validate' in cfg_list:
+            conn = sqlite3.connect('KMDEssential.cfg')
+            c = conn.cursor()
+            with conn:  
+                c.execute("INSERT OR REPLACE INTO config(name,content) VALUES(?,?)", ('validate',self.config['validate']))
+                conn.commit()   
 
     def trim_url(self, url):
         url=url.replace("//","/")
@@ -280,8 +293,10 @@ class WindowClass(QMainWindow, UI_main.Ui_mainWindow):
             label_regist.setText('이 프로그램의 경로가 변경되었습니다.')
         if not self.checkregist :
             label_regist.setText('이 프로그램은 등록되지 않았습니다.')
-        if not self.validate:
+        if not self.duedate:
             label_regist.setText('이 프로그램의 사용기한이 만료되었습니다.')
+        if not self.validate:
+            label_regist.setText('이 프로그램의 사용권한이 중단되었습니다.')
         
         server = getserver.getServer()
         server.version = VERSION
@@ -363,6 +378,11 @@ class WindowClass(QMainWindow, UI_main.Ui_mainWindow):
             regdate = self.config['regdate']
             result = clsserial.checkSerial(serial, regdate)
         return result
+
+    def checkValidate(self):
+        server = getserver.getServer()
+        validate = server.getValidate(VERSION)
+        return validate
 
     def checkPath(self):
         result = False

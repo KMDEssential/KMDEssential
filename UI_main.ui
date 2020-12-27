@@ -27,7 +27,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>KMDmain.ico</normaloff>KMDmain.ico</iconset>
+    <normaloff>icon.ico</normaloff>icon.ico</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_2">
@@ -35,8 +35,23 @@
      <layout class="QGridLayout" name="gridLayout">
       <item row="0" column="0">
        <widget class="QTabWidget" name="tabWidget">
+        <property name="tabPosition">
+         <enum>QTabWidget::North</enum>
+        </property>
+        <property name="tabShape">
+         <enum>QTabWidget::Rounded</enum>
+        </property>
         <property name="currentIndex">
          <number>0</number>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>16</width>
+          <height>16</height>
+         </size>
+        </property>
+        <property name="movable">
+         <bool>true</bool>
         </property>
         <widget class="QWidget" name="tab">
          <attribute name="title">
@@ -57,7 +72,7 @@
             <widget class="QPushButton" name="Button_start">
              <property name="geometry">
               <rect>
-               <x>140</x>
+               <x>0</x>
                <y>10</y>
                <width>100</width>
                <height>40</height>
@@ -70,8 +85,8 @@
             <widget class="QRadioButton" name="radioButton1">
              <property name="geometry">
               <rect>
-               <x>10</x>
-               <y>10</y>
+               <x>220</x>
+               <y>12</y>
                <width>120</width>
                <height>16</height>
               </rect>
@@ -83,8 +98,8 @@
             <widget class="QRadioButton" name="radioButton2">
              <property name="geometry">
               <rect>
-               <x>10</x>
-               <y>30</y>
+               <x>220</x>
+               <y>35</y>
                <width>120</width>
                <height>16</height>
               </rect>
@@ -96,7 +111,7 @@
             <widget class="QPushButton" name="Button_stop">
              <property name="geometry">
               <rect>
-               <x>240</x>
+               <x>100</x>
                <y>10</y>
                <width>100</width>
                <height>40</height>
@@ -130,8 +145,8 @@
                <widget class="QPushButton" name="pushButton_saveurl">
                 <property name="minimumSize">
                  <size>
-                  <width>50</width>
-                  <height>0</height>
+                  <width>70</width>
+                  <height>30</height>
                  </size>
                 </property>
                 <property name="maximumSize">
@@ -149,8 +164,8 @@
                <widget class="QPushButton" name="pushButton_addkeyword">
                 <property name="minimumSize">
                  <size>
-                  <width>130</width>
-                  <height>0</height>
+                  <width>150</width>
+                  <height>30</height>
                  </size>
                 </property>
                 <property name="maximumSize">
@@ -168,8 +183,8 @@
                <widget class="QPushButton" name="pushButton_savekeyword">
                 <property name="minimumSize">
                  <size>
-                  <width>50</width>
-                  <height>0</height>
+                  <width>70</width>
+                  <height>30</height>
                  </size>
                 </property>
                 <property name="maximumSize">
@@ -200,8 +215,8 @@
                <widget class="QPushButton" name="pushButton_addurl">
                 <property name="minimumSize">
                  <size>
-                  <width>130</width>
-                  <height>0</height>
+                  <width>150</width>
+                  <height>30</height>
                  </size>
                 </property>
                 <property name="maximumSize">
@@ -270,7 +285,7 @@
             </rect>
            </property>
            <property name="text">
-            <string>등록문구</string>
+            <string>Register</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
@@ -280,7 +295,7 @@
            <property name="geometry">
             <rect>
              <x>450</x>
-             <y>180</y>
+             <y>210</y>
              <width>93</width>
              <height>28</height>
             </rect>
@@ -292,9 +307,9 @@
           <widget class="QLineEdit" name="lineEdit_serial">
            <property name="geometry">
             <rect>
-             <x>60</x>
-             <y>180</y>
-             <width>381</width>
+             <x>10</x>
+             <y>210</y>
+             <width>431</width>
              <height>28</height>
             </rect>
            </property>
@@ -302,14 +317,14 @@
           <widget class="QLabel" name="label_3">
            <property name="geometry">
             <rect>
-             <x>10</x>
+             <x>20</x>
              <y>180</y>
              <width>64</width>
              <height>28</height>
             </rect>
            </property>
            <property name="text">
-            <string>Serial : </string>
+            <string>Serial</string>
            </property>
           </widget>
           <widget class="QTextBrowser" name="textBrowser_3">
@@ -357,8 +372,8 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'굴림'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji'; font-size:9pt; color:#24292e; background-color:#ffffff;&quot;&gt;면책 조항&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji'; font-size:9pt; color:#24292e; background-color:#ffffff;&quot;&gt;본 소프트웨어는 저작권 소유자 및 기여자에 의해 있는 그대로 제공되며, 상품성, 특정 목적에의 적합성에 대한 묵시적 보증 포함 (이에 한정되지는 않음) 명시적 또는 묵시적 보증을 배제한다. 어떠한 경우에도 저작권 소유자 또는 기여자는 계약, 엄격 책임 또는 (과실 및 기타 사유 포함) 불법 행위 등 사유 및 책임 이론에 관계없이, (대체 제품 또는 서비스 조달; 사용, 데이터 또는 이익 상실; 사업 중단 포함; 이에 한정되지는 않음) 본 소프트웨어 사용 관련 직접, 간접, 파생적, 특별, 징벌적 또는 결과적 손해에 대해 책임을 지지 않는다. 이러한 손해 가능성을 사전에 알고 있은 경우도 마찬가지이다.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji'; color:#24292e; background-color:#ffffff;&quot;&gt;면책 조항&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji'; color:#24292e; background-color:#ffffff;&quot;&gt;본 소프트웨어는 저작권 소유자 및 기여자에 의해 있는 그대로 제공되며, 상품성, 특정 목적에의 적합성에 대한 묵시적 보증 포함 (이에 한정되지는 않음) 명시적 또는 묵시적 보증을 배제한다. 어떠한 경우에도 저작권 소유자 또는 기여자는 계약, 엄격 책임 또는 (과실 및 기타 사유 포함) 불법 행위 등 사유 및 책임 이론에 관계없이, (대체 제품 또는 서비스 조달; 사용, 데이터 또는 이익 상실; 사업 중단 포함; 이에 한정되지는 않음) 본 소프트웨어 사용 관련 직접, 간접, 파생적, 특별, 징벌적 또는 결과적 손해에 대해 책임을 지지 않는다. 이러한 손해 가능성을 사전에 알고 있은 경우도 마찬가지이다.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
             </widget>
             <widget class="QTextBrowser" name="textBrowser_2">
@@ -375,19 +390,19 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'굴림'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;저작권의 범위&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;이 프로그램은 KMD licence를 보유한자만이 사용할 수 있습니다.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;KMD licence 를 보유하지 않은 자의 복제, 전파, 사용을 금지합니다.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;이 프로그램의 소스를 사용하여 수정하여 사용하는 것을 허용합니다.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;이 프로그램의 소스와 이 소스 부분 또는 전부를 이용하여 만든 프로그램을 &lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;배포하는 것을 허용하지 않습니다.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;저작권의 범위&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;이 프로그램은 KMD licence를 보유한자만이 사용할 수 있습니다.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;KMD licence 를 보유하지 않은 자의 복제, 전파, 사용을 금지합니다.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;이 프로그램의 소스를 사용하여 수정하여 사용하는 것을 허용합니다.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;이 프로그램의 소스와 이 소스 부분 또는 전부를 이용하여 만든 프로그램을 &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;배포하는 것을 허용하지 않습니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
             </widget>
             <widget class="QLabel" name="label">
              <property name="geometry">
               <rect>
                <x>10</x>
-               <y>5</y>
+               <y>15</y>
                <width>531</width>
                <height>20</height>
               </rect>
@@ -406,7 +421,7 @@ p, li { white-space: pre-wrap; }
              <property name="geometry">
               <rect>
                <x>10</x>
-               <y>30</y>
+               <y>40</y>
                <width>531</width>
                <height>20</height>
               </rect>
@@ -415,7 +430,7 @@ p, li { white-space: pre-wrap; }
               <enum>Qt::LeftToRight</enum>
              </property>
              <property name="text">
-              <string>v 0.0.1</string>
+              <string>v 0.1.0</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>

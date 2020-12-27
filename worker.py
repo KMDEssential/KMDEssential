@@ -36,7 +36,6 @@ class Worker(QThread):
                         index_view_blog = 0
                         for key in source2:
                             blog_url = key.select("a.sub_thumb")[0]['href']
-                            # blog_url = key.select("div.total_sub")[0].a['href']
                             index_blog_url = 0
                             for key in blog_url_list:
                                 if key in blog_url:
@@ -60,7 +59,6 @@ class Worker(QThread):
                         index_view_blog = 0
                         for key in source2:
                             blog_url = key.select("a.sub_thumb")[0]['href']
-                            # blog_url = key.select("div.total_sub")[0].a['href']
                             index_blog_url = 0
                             for key in blog_url_list:
                                 if key in blog_url:
