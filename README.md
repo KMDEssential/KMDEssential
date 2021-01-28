@@ -13,7 +13,7 @@ KMD licence 를 보유하지 않은 자의 복제, 전파, 사용을 금지합�
 # License
 BSD-3-Clause
 
-Copyright (c) 2020, KMD Richard
+Copyright (c) 2021, KMD Richard
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
