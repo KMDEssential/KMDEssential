@@ -1,7 +1,9 @@
 #version
 0.0.1 terminated
 0.0.2 use
-0.1.0 latest
+0.1.0 use
+0.2.0 latest
+
 #msg
 현재 버전은 v $VERSION 입니다.
 최신 버전은 v $LATEST 입니다.
